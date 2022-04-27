@@ -7,7 +7,9 @@ let dolarBugun = 9.3;
 }
 //JS Type Safe değildir(Tip Güvenliği)
 console.log(dolarDun);
+
 const euroDun = 11.1;
+
 let konutKredileri = [12, "Emlak Konut Kredisi", ["a", "b", "c"]];
 for (let i = 0; i < 3; i++) {
   console.log("<li>" + konutKredileri[i] + "</li>");

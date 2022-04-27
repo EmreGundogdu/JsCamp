@@ -54,3 +54,27 @@ function add(something, ...numbers) { //rest operatörü
     console.log(toplam)
 }
 add(123, 30, 40)
+
+
+let bolgeler = ["İç Anadolu", "Marmara", "Ege", "Akdeniz"]
+console.log(bolgeler[0])
+
+let [icAnadolu, marmara, ege, [icAnadoluSehirleri]] = [{ name: "İc Anadolu", population: "20M" }, { name: "Marmara", population: "40M" }, { name: "Ege", population: "10M" },
+[
+    ["Ankara", "Konya"],
+    ["istanbul", "Bursa"],
+    ["Aydın", "İzmir"],
+
+]]
+console.log(icAnadolu.name)
+console.log(marmara.name)
+console.log(ege.name)
+
+console.log(icAnadoluSehirleri)
+
+
+
+let newName, newModel
+({ name: newName, model: newModel } = { name: "Mercedes", model: "E Series" })
+
+console.log(newName)

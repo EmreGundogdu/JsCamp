@@ -1,4 +1,4 @@
-export default class User {
+export default class Customer {
     constructor(id, firstName, lastName, city, age) {
         this.firstName = firstName
         this.id = id

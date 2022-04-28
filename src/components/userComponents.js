@@ -1,9 +1,22 @@
+import { BaseLogger, ElasticLogger, MongoLogger } from "../crossCuttingConcerns/logging/logger.js"
+import User from "../models/user.js"
 import UserService from "../services/userService.js"
 
-console.log("User Component Yüklendi")
+//
+// let customer = { id: 1, firstName: "Emre" }
+// customer.lastName = "Gundogdu"
+// console.log(customer.lastName)
 
-let userService = new UserService //class nesnesi alma
+let logger1 = new ElasticLogger()
 
-userService.add()
-userService.getById(1)
-userService.list()
+let userService = new UserService(logger1) //class nesnesi alma
+
+let user1 = new User(1, "Emre", "Gündoğdu", "Eskişehir")
+let user2 = new User(2, "Mert", "Akar", "Eskişehir")
+userService.add(user1)
+userService.add(user2)
+console.log(userService.list())
+console.log(userService.getById(1))
+
+
+

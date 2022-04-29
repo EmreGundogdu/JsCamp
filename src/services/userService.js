@@ -42,11 +42,11 @@ export default class UserService { //export: dışarıdan import edilebilir anla
         }
         this.loggerService.log(user)
     }
-    list() {
-        //return this.users
+    listCustomers() {
+        return this.customers
     }
     getById(id) {
-        //return this.users.find(user => user.id == id)
+        this.customers.find(x => x.id === id)
     }
     // react - yup
     checkCustomerValidityForErrors(user) {
@@ -58,7 +58,7 @@ export default class UserService { //export: dışarıdan import edilebilir anla
                 this.errors.push(new DataError(`Validation Problem, ${field} is required`, user))
             }
         }
-        if (Number.isNaN(Number.parseInt(user.age))) {
+        if (Number.isNaN(Number.parseInt(+user.age))) {
             hasErrors = true
             this.errors.push(new DataError(`Validation problem. ${user.age} is not a number`, user))
         }
@@ -74,5 +74,16 @@ export default class UserService { //export: dışarıdan import edilebilir anla
             }
         }
         return hasErrors
+    }
+    getCustomersSorted() {
+        this.customers.sort((customer1, customer2) => {
+            if (customer1.firstName < customer2.firstName) {
+                return 1;
+            } else if (customer1.firstName === customer2.firstName) {
+                return 0;
+            } else {
+                return -1;
+            }
+        })
     }
 }

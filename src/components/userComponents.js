@@ -16,7 +16,7 @@ let user1 = new User(1, "Emre", "Gündoğdu", "Eskişehir")
 let user2 = new User(2, "Mert", "Akar", "Eskişehir")
 userService.add(user1)
 userService.add(user2)
-console.log(userService.list())
+console.log(userService.listCustomers())
 console.log(userService.getById(1))
 
 

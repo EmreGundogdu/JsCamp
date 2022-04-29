@@ -1,6 +1,7 @@
 import { BaseLogger, ElasticLogger, MongoLogger } from "../crossCuttingConcerns/logging/logger.js"
 import User from "../models/user.js"
 import UserService from "../services/userService.js"
+import Customer from "../models/customer.js"
 
 //
 // let customer = { id: 1, firstName: "Emre" }
@@ -21,6 +22,7 @@ console.log(userService.getById(1))
 
 console.log("--------------------")
 userService.load()
+userService.add(new Customer(6, "Burak", "Gündoğdu", "Bremerhaven", 22))
 console.log(userService.customers)
 console.log(userService.employees)
 console.log(userService.errors)

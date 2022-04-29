@@ -29,7 +29,17 @@ export default class UserService { //export: dışarıdan import edilebilir anla
         }
     }
     add(user) {
-        //this.users.push(user)
+        switch (user.type) {
+            case "customer":
+                this.customers.push(user)
+                break;
+            case "employee":
+                this.employees.push(user)
+                break;
+            default:
+                this.errors.push(new DataError("Wrong User Type", user))
+                break;
+        }
         this.loggerService.log(user)
     }
     list() {

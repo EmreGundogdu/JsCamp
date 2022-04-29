@@ -48,6 +48,10 @@ export default class UserService { //export: dışarıdan import edilebilir anla
                 this.errors.push(new DataError(`Validation Problem, ${field} is required`, user))
             }
         }
+        if (Number.isNaN(Number.parseInt(user.age))) {
+            hasErrors = true
+            this.errors.push(new DataError(`Validation problem. ${user.age} is not a number`, user))
+        }
         return hasErrors
     }
     checkEmployeeValidityForErrors(user) {

@@ -26,5 +26,5 @@ userService.add(new Customer(6, "Burak", "Gündoğdu", "Bremerhaven", 22))
 console.log(userService.customers)
 console.log(userService.employees)
 console.log(userService.errors)
-
+console.log(userService.getCustomersSorted())
 

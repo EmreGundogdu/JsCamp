@@ -1,9 +1,8 @@
-export default class Customer {
-    constructor(id, firstName, lastName, city, age) {
-        this.firstName = firstName
-        this.id = id
-        this.lastName = lastName
-        this.city = city
-        this.age = age
+import User from "./user.js"
+
+export default class Customer extends User {
+    constructor(id, firstName, lastName, city, age, creditCardNumber) {
+        super(id, firstName, lastName, city, age)
+        this.creditCardNumber = creditCardNumber
     }
 }

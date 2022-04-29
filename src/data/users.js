@@ -11,5 +11,9 @@ export const users = [
     {
 
         id: 4, firstName: "Ferhat", lastName: "Demir", city: "Eskişehir", age: 23, creditCardNumber: "123456", salary: 9000, type: "employee"
+    },
+    {
+
+        id: 4, firstName: "Burhan", lastName: "Akpınar", city: "Eskişehir", age: 23, creditCardNumber: "123456", salary: 15000, type: "employe"
     }
 ]
